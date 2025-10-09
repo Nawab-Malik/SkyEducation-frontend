@@ -1,0 +1,156 @@
+/* Category Buttons */
+.active-btn {
+  background-color: #02AEF1 !important;
+  color: #fff !important;
+  border-radius: 6px;
+  border: none !important;
+}
+
+.inactive-btn {
+  background-color: transparent !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px;
+  color: #000 !important;
+}
+
+.inactive-btn:hover {
+  background-color: #02AEF1 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Enroll Button */
+.enroll-btn {
+  background: linear-gradient(135deg, #02AEF1 0%, #0298d8 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(2, 174, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.enroll-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(135deg, #0298d8 0%, #027bb5 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 174, 241, 0.4);
+  color: #fff !important;
+}
+
+.enroll-btn:hover::before {
+  left: 100%;
+}
+
+.enroll-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(2, 174, 241, 0.3);
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btn img {
+  transition: transform 0.2s;
+}
+
+.nav-btn:hover img {
+  transform: scale(1.1);
+}
+
+.card-img-top{
+  height: 170px;
+  object-fit: cover;
+}
+
+/* Fix card shrink on mobile */
+@media (max-width: 576px) {
+  .row.g-4 {
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 0.75rem;
+  }
+  .card {
+    transform: scale(0.95);
+  }
+}
+
+/* Enhanced styling for better consistency */
+.playfair-display-custom {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Course grid improvements */
+.courses-grid {
+  min-height: 400px;
+}
+
+.course-category-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+}
+
+/* Loading states */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(2, 174, 241, 0.3);
+  border-radius: 50%;
+  border-top-color: #02AEF1;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Improved responsive design */
+@media (max-width: 992px) {
+  .category-buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .category-buttons .btn {
+    font-size: 0.7rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* Better hover effects */
+.course-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.course-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}

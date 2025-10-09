@@ -1,0 +1,549 @@
+.about-text {
+  color: #7C7C7C;
+  font-size: 18px;
+  font-weight: 400;
+  .LearnButton{
+    transition: transform 0.7s ease;
+  }
+
+  .LearnButton:hover{
+    transform: scale(1.05);
+    background-color: #029ee0 !important;
+  }
+}
+
+/* Image corner rounding */
+.rounded-top-right {
+  border-top-right-radius: 15px;
+}
+
+.rounded-bottom-right {
+  border-bottom-right-radius: 15px;
+}
+
+.LearnButton{
+  transition: transform 0.7s ease;
+}
+
+.LearnButton:hover{
+  transform: scale(1.05);
+  background-color: #029ee0 !important;
+}
+
+/* Animated heading styles */
+.animated-heading {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-heading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.8s ease;
+}
+
+.animated-heading:hover::after {
+  left: 100%;
+}
+
+.highlight-text {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-text::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #02AEF1, #0EA5E9);
+  transition: width 0.6s ease;
+}
+
+.animated-heading:hover .highlight-text::before {
+  width: 100%;
+}
+
+/* Title underline animation */
+.title-underline {
+  display: block !important;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #02AEF1, #0EA5E9);
+  transition: width 0.6s ease;
+  margin: 0 auto;
+}
+
+h2:hover .title-underline {
+  width: 100%;
+}
+
+/* Title and subtitle fade-in animations */
+.title-fade-in {
+  opacity: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.subtitle-fade-in {
+  opacity: 1;
+  animation: fadeInUp 1.2s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero-style Card hover effects */
+.about-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(2, 174, 241, 0.15), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.about-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(2, 174, 241, 0.1) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+/* Hero-style dramatic hover effect */
+.about-card:hover {
+  transform: scale(1.08) translateY(-20px);
+  box-shadow: 0 30px 60px rgba(2, 174, 241, 0.3);
+  border-color: rgba(2, 174, 241, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+}
+
+.about-card:hover::before {
+  left: 100%;
+}
+
+.about-card:hover::after {
+  transform: scale(1);
+}
+
+/* Particle-like floating elements on hover */
+.about-card:hover .card-particles {
+  opacity: 1;
+  animation: particleFloat 2s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-10px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-5px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-15px) rotate(270deg);
+    opacity: 0.7;
+  }
+}
+
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #02AEF1, transparent);
+  border-radius: 50%;
+  animation: particleMove 3s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(2, 174, 241, 0.6);
+}
+
+.particle:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  top: 25%;
+  left: 85%;
+  animation-delay: 0.3s;
+  width: 3px;
+  height: 3px;
+}
+
+.particle:nth-child(3) {
+  top: 45%;
+  left: 20%;
+  animation-delay: 0.6s;
+  width: 5px;
+  height: 5px;
+}
+
+.particle:nth-child(4) {
+  top: 65%;
+  left: 75%;
+  animation-delay: 0.9s;
+}
+
+.particle:nth-child(5) {
+  top: 35%;
+  left: 50%;
+  animation-delay: 1.2s;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #0EA5E9, transparent);
+}
+
+.particle:nth-child(6) {
+  top: 75%;
+  left: 15%;
+  animation-delay: 1.5s;
+}
+
+.particle:nth-child(7) {
+  top: 20%;
+  left: 65%;
+  animation-delay: 1.8s;
+  width: 3px;
+  height: 3px;
+}
+
+.particle:nth-child(8) {
+  top: 55%;
+  left: 35%;
+  animation-delay: 2.1s;
+  width: 4px;
+  height: 4px;
+}
+
+.particle:nth-child(9) {
+  top: 80%;
+  left: 60%;
+  animation-delay: 2.4s;
+  width: 5px;
+  height: 5px;
+}
+
+.particle:nth-child(10) {
+  top: 40%;
+  left: 5%;
+  animation-delay: 2.7s;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #0284C7, transparent);
+}
+
+@keyframes particleMove {
+  0%, 100% {
+    transform: translateY(0px) scale(0.8);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-15px) scale(1.2);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.5);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-18px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Additional sparkle effects */
+.about-card:hover .sparkle {
+  opacity: 1;
+  animation: sparkleEffect 1.5s ease-in-out infinite;
+}
+
+.sparkle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.sparkle:nth-child(1) {
+  top: 30%;
+  left: 25%;
+  animation-delay: 0.2s;
+}
+
+.sparkle:nth-child(2) {
+  top: 70%;
+  left: 70%;
+  animation-delay: 0.7s;
+}
+
+.sparkle:nth-child(3) {
+  top: 50%;
+  left: 45%;
+  animation-delay: 1.2s;
+}
+
+@keyframes sparkleEffect {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.about-card .card-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Icon animations */
+.about-card {
+  --icon-delay: 0.2s;
+}
+
+.about-card:hover {
+  --icon-transform: translateY(-3px) scale(1.1);
+}
+
+/* 3D tilt effect */
+.about-card:hover h4 {
+  transform: translateY(-8px) scale(1.05);
+  color: #02AEF1;
+  text-shadow: 0 0 10px rgba(2, 174, 241, 0.3);
+}
+
+.about-card p {
+  transition: all 0.4s ease;
+  opacity: 0.9;
+}
+
+.about-card:hover p {
+  opacity: 1;
+  transform: translateY(-3px);
+  color: #495057;
+}
+
+/* Initially hide floating elements */
+.floating-decorations .floating-dot,
+.floating-decorations .floating-shape {
+  opacity: 0;
+}
+
+/* CEO Image decorative effects */
+.floating-decorations {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 60px;
+  pointer-events: none;
+}
+
+.floating-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: floatDot 4s ease-in-out infinite;
+}
+
+.dot-1 {
+  top: 10px;
+  left: 20px;
+  background: radial-gradient(circle, #02AEF1, transparent);
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  top: 25px;
+  left: 60px;
+  background: radial-gradient(circle, #0EA5E9, transparent);
+  animation-delay: 1s;
+}
+
+.dot-3 {
+  top: 5px;
+  left: 140px;
+  background: radial-gradient(circle, #0284C7, transparent);
+  animation-delay: 2s;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatShape 5s ease-in-out infinite;
+}
+
+.shape-1 {
+  top: 15px;
+  left: 80px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, #02AEF1, #0EA5E9);
+  animation-delay: 0.5s;
+}
+
+.shape-2 {
+  top: 30px;
+  left: 120px;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffffff, transparent);
+  box-shadow: 0 0 10px rgba(2, 174, 241, 0.5);
+  animation-delay: 1.5s;
+}
+
+@keyframes floatDot {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-8px) scale(1.2);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-4px) scale(0.8);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-12px) scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes floatShape {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translateY(-6px) rotate(120deg) scale(1.1);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translateY(-10px) rotate(240deg) scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+.image-glow {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -35px; /* Extended to cover decorations */
+  background: radial-gradient(circle, rgba(2, 174, 241, 0.1) 0%, transparent 70%);
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.position-relative:hover .image-glow {
+  opacity: 1;
+}
+
+/* Enhanced CEO image hover */
+.ceo-image-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.ceo-image-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(2, 174, 241, 0.2);
+  filter: brightness(1.1);
+}
+
+/* Floating animation for elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation for interactive elements */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(2, 174, 241, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(2, 174, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(2, 174, 241, 0);
+  }
+}
+
+/* Enhanced floating decorations on hover */
+.position-relative:hover .floating-decorations .floating-dot {
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.position-relative:hover .floating-decorations .floating-shape {
+  animation-play-state: running;
+  opacity: 1;
+}

@@ -1,0 +1,106 @@
+/* Contact Page Styles */
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(2, 174, 241, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon i {
+  font-size: 20px;
+}
+
+.feature-item {
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Form Styles */
+.form-control:focus {
+  border-color: #02AEF1 !important;
+  box-shadow: 0 0 0 0.2rem rgba(2, 174, 241, 0.25) !important;
+}
+
+.form-control.border-bottom:focus {
+  border-bottom-color: #02AEF1 !important;
+}
+
+/* Card hover effects */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contact-icon i {
+    font-size: 16px;
+  }
+  
+  .feature-item i {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Button hover effects */
+.btn-primary:hover {
+  background-color: #0298d4 !important;
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar for textarea */
+.form-control::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-control::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.form-control::-webkit-scrollbar-thumb {
+  background: #02AEF1;
+  border-radius: 4px;
+}
+
+.form-control::-webkit-scrollbar-thumb:hover {
+  background: #0298d4;
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}

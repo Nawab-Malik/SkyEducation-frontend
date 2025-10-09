@@ -1,0 +1,137 @@
+/* ===== About Cards Hover Magic ===== */
+:root{
+  --brand: #02AEF1;
+  --cardRadius: 1rem;
+}
+
+.about-card{
+  position: relative;
+  isolation: isolate;              /* keep glow under content */
+  border-radius: var(--cardRadius);
+  background: #fff;
+  border: 1px solid rgba(2,174,241,.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* soft brand border on hover */
+.about-card:hover,
+.about-card:focus-visible{
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(2,174,241,.4);
+  box-shadow: 0 16px 40px rgba(2,174,241,.25);
+  outline: none;
+}
+
+/* Blink/Pulse glow ring (only active on hover/focus) */
+.about-card::after{
+  content:"";
+  position:absolute;
+  inset: -40%;
+  margin:auto;
+  width: 220%;
+  height: 220%;
+  background: radial-gradient(ellipse at center, rgba(2,174,241,.28), rgba(2,174,241,0) 60%);
+  filter: blur(18px);
+  opacity: 0;
+  transform: scale(.95);
+  transition: opacity .2s ease;
+  z-index: -1; /* behind card content */
+  pointer-events: none;
+}
+.about-card:hover::after,
+.about-card:focus-visible::after{
+  animation: blinkPulse 1.4s ease-in-out infinite;
+}
+
+/* Subtle diagonal shine sweep */
+.about-card::before{
+  content:"";
+  position:absolute;
+  top:-120%;
+  left:-40%;
+  width: 60%;
+  height: 340%;
+  transform: rotate(20deg);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 45%, rgba(255,255,255,0) 90%);
+  opacity: 0;
+  pointer-events: none;
+}
+.about-card:hover::before,
+.about-card:focus-visible::before{
+  opacity: .9;
+  animation: shineSweep 900ms ease forwards;
+}
+
+/* Keyframes */
+@keyframes blinkPulse{
+  0%,100% { opacity: 0; transform: scale(.95); }
+  50%     { opacity: .45; transform: scale(1.03); }
+}
+@keyframes shineSweep{
+  from { transform: rotate(20deg) translateX(-40%); }
+  to   { transform: rotate(20deg) translateX(240%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .about-card,
+  .about-card::before,
+  .about-card::after{
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Optional: nicer heading color inside cards */
+.about-card h5{
+  color: var(--brand);
+}
+.about-card p{
+  color:#555;
+}
+
+
+.about-cards-wrapper {
+  gap: 30px; /* space between cards */
+  margin-top: 50px;
+  flex-wrap: nowrap; /* keep all cards in one row */
+  overflow-x: auto; /* in case screen is small */
+}
+
+.about-card {
+  width: 300px; /* fixed modern card width */
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #ffffff;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  font-size: 28px;
+  transition: all 0.3s;
+}
+
+.about-card:hover .icon-circle {
+  background: #0d6efd;
+  transform: scale(1.2);
+}
+
+.about-card h5 {
+  color: #333;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
