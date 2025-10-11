@@ -47,7 +47,7 @@ function Hero() {
       case "ICQ":
         return "ICQ";
       case "SEG":
-        return "SEG SKILLS AND EDUCATION GROUP AWARDS";
+        return "SKILLS AND EDUCATION GROUP AWARDS";
       case "SQA":
       case "TAXI":
         return "SQA";

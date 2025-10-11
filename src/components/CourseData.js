@@ -61,17 +61,18 @@ const courseData = {
 
     // SEG - Automotive & MOT Courses
     {
-      id: 5,
-      title: "Level 3 MOT Management",
-      desc: "The Level 3 MOT Management course at Sky Education is a comprehensive program designed for automotive professionals seeking to advance into management roles within MOT testing centers. This qualification provides detailed knowledge of MOT testing procedures, quality management systems, staff supervision, and regulatory compliance requirements. Students will learn about business operations, customer service management, equipment maintenance, and the implementation of effective quality control measures. The course covers legal responsibilities, health and safety protocols, and the management of testing documentation and records. Graduates will be prepared to lead MOT testing facilities, ensuring high standards of service delivery while maintaining strict adherence to DVSA regulations and industry best practices.",
-      img: getCourseImage("seg", 1),
-    },
-    {
       id: 6,
       title: "MOT Class 1 & 2",
       desc: "The MOT Class 1 & 2 course at Sky Education provides comprehensive training for individuals seeking to become certified MOT testers for motorcycles and smaller vehicles. This intensive program covers all aspects of MOT testing procedures, including pre-test preparations, systematic vehicle inspections, and accurate fault identification. Students will gain hands-on experience with testing equipment, learn to interpret DVSA guidelines, and understand the legal framework governing MOT testing. The course emphasizes practical skills development, safety protocols, and the importance of maintaining testing integrity. Upon successful completion, participants will be qualified to conduct official MOT tests on Class 1 (motorcycles) and Class 2 (vehicles up to 3,000kg) vehicles, opening opportunities for employment in garages, testing stations, and automotive service centers.",
       img: getCourseImage("seg", 2),
     },
+    {
+      id: 5,
+      title: "Level 3 MOT Management",
+      desc: "The Level 3 MOT Management course at Sky Education is a comprehensive program designed for automotive professionals seeking to advance into management roles within MOT testing centers. This qualification provides detailed knowledge of MOT testing procedures, quality management systems, staff supervision, and regulatory compliance requirements. Students will learn about business operations, customer service management, equipment maintenance, and the implementation of effective quality control measures. The course covers legal responsibilities, health and safety protocols, and the management of testing documentation and records. Graduates will be prepared to lead MOT testing facilities, ensuring high standards of service delivery while maintaining strict adherence to DVSA regulations and industry best practices.",
+      img: getCourseImage("seg", 1),
+    },
+
     {
       id: 7,
       title: "Level 3 Technician",
@@ -271,7 +272,7 @@ const courseData = {
       id: 49,
       title: "LEVEL 3 C2 - ITEC ESOL CERTIFICATE INTERNATIONAL",
       desc: " This expert-level ITEC ESOL Certificate International at Level 3 C2 provides the highest standard of English language proficiency for students seeking mastery-level communication skills. The course covers sophisticated linguistic analysis, advanced academic writing, and expert-level communication abilities. Students will achieve the language proficiency required for university study, professional leadership, and international career opportunities.",
-      img: getCourseImage("vtct", 13),
+      img: getCourseImage("vtct", 9),
     },
     {
       id: 50,
@@ -381,17 +382,18 @@ const courseData = {
 
   SEG: [
     {
-      id: 1,
-      title: "Level 3 MOT Management",
-      desc: "The Level 3 MOT Management course at Sky Education is a comprehensive program designed for automotive professionals seeking to advance into management roles within MOT testing centers. This qualification provides detailed knowledge of MOT testing procedures, quality management systems, staff supervision, and regulatory compliance requirements. Students will learn about business operations, customer service management, equipment maintenance, and the implementation of effective quality control measures. The course covers legal responsibilities, health and safety protocols, and the management of testing documentation and records. Graduates will be prepared to lead MOT testing facilities, ensuring high standards of service delivery while maintaining strict adherence to DVSA regulations and industry best practices.",
-      img: getCourseImage("seg", 1),
-    },
-    {
       id: 2,
       title: "MOT Class 1 & 2",
       desc: "The MOT Class 1 & 2 course at Sky Education provides comprehensive training for individuals seeking to become certified MOT testers for motorcycles and smaller vehicles. This intensive program covers all aspects of MOT testing procedures, including pre-test preparations, systematic vehicle inspections, and accurate fault identification. Students will gain hands-on experience with testing equipment, learn to interpret DVSA guidelines, and understand the legal framework governing MOT testing. The course emphasizes practical skills development, safety protocols, and the importance of maintaining testing integrity. Upon successful completion, participants will be qualified to conduct official MOT tests on Class 1 (motorcycles) and Class 2 (vehicles up to 3,000kg) vehicles, opening opportunities for employment in garages, testing stations, and automotive service centers.",
       img: getCourseImage("seg", 2),
     },
+    {
+      id: 1,
+      title: "Level 3 MOT Management",
+      desc: "The Level 3 MOT Management course at Sky Education is a comprehensive program designed for automotive professionals seeking to advance into management roles within MOT testing centers. This qualification provides detailed knowledge of MOT testing procedures, quality management systems, staff supervision, and regulatory compliance requirements. Students will learn about business operations, customer service management, equipment maintenance, and the implementation of effective quality control measures. The course covers legal responsibilities, health and safety protocols, and the management of testing documentation and records. Graduates will be prepared to lead MOT testing facilities, ensuring high standards of service delivery while maintaining strict adherence to DVSA regulations and industry best practices.",
+      img: getCourseImage("seg", 1),
+    },
+
     {
       id: 3,
       title: "Level 3 Technician",
@@ -422,7 +424,7 @@ const courseData = {
     },
     {
       id: 3,
-      title: "PEARSON FUNCTIONAL SKILLS Entry Level 3 English",
+      title: "PEARSON Entry Level 3 English",
       desc: "The Entry Level 3 English course prepares students for practical usage of English, focusing on developing skills to engage effectively in real-world communication tasks and social interactions. This course builds upon basic English skills, introducing more complex language structures, extended vocabulary, and varied communication scenarios. Students will practice reading different types of texts, writing for various purposes, speaking in different situations, and listening for specific information. The program emphasizes functional English skills that are directly applicable to everyday life, including completing forms, understanding instructions, participating in discussions, and expressing opinions clearly. Learning activities are designed to be engaging and relevant, helping students develop confidence in using English in community, workplace, and educational settings.",
       img: getCourseImage("persons", 8),
     },
@@ -498,6 +500,12 @@ const courseData = {
 
   "PRO QUAL": [
     {
+      id: 3,
+      title: "PROQUAL Level 1 Health & Safety in Construction",
+      desc: "The PROQUAL Level 1 Health & Safety in Construction course provides a comprehensive introduction to essential health and safety practices, regulations, and responsibilities within the construction sector. This foundational program covers key topics including hazard identification, risk assessment procedures, personal protective equipment usage, and safe working practices on construction sites. Students will learn about legal requirements, accident prevention strategies, emergency procedures, and the importance of maintaining a safety-first culture in construction environments. The course includes practical elements such as site safety inspections, safety equipment demonstrations, and case study analyses of construction accidents. Emphasis is placed on developing safety awareness, understanding regulatory compliance requirements, and building the knowledge foundation necessary for safe participation in construction activities.",
+      img: getCourseImage("proqual", 4),
+    },
+    {
       id: 1,
       title: "PROQUAL Level 2 Award in Site Security",
       desc: "The PROQUAL Level 2 Award in Site Security provides students with a comprehensive foundation in modern security principles, risk assessment methodologies, and workplace safety protocols essential for professional security operations. This course covers fundamental security concepts including threat identification, access control systems, surveillance techniques, and emergency response procedures. Students will learn about legal frameworks governing security work, professional conduct standards, and the importance of maintaining confidentiality and integrity. The program includes practical training in security equipment usage, report writing, communication skills, and conflict resolution techniques. Emphasis is placed on understanding security risks in different environments, developing situational awareness, and implementing appropriate security measures to protect people, property, and assets.",
@@ -508,12 +516,6 @@ const courseData = {
       title: "PROQUAL Level 2 First Aid",
       desc: "The PROQUAL Level 2 First Aid course provides comprehensive training in essential life-saving skills, equipping participants with the knowledge and confidence to respond effectively to medical emergencies and accident situations. This intensive program covers CPR techniques, wound management, shock treatment, and the management of various medical conditions including heart attacks, strokes, and breathing difficulties. Students will learn to assess emergency situations, prioritize treatment, and provide appropriate care while awaiting professional medical assistance. The course includes hands-on practical training with mannequins, role-playing scenarios, and the use of first aid equipment. Participants will develop skills in patient assessment, communication with emergency services, and maintaining accurate records of treatment provided. This qualification is essential for workplace first aiders and anyone seeking to develop potentially life-saving skills.",
       img: getCourseImage("proqual", 10),
-    },
-    {
-      id: 3,
-      title: "PROQUA Level 1 Health & Safety in Construction",
-      desc: "The PROQUA Level 1 Health & Safety in Construction course provides a comprehensive introduction to essential health and safety practices, regulations, and responsibilities within the construction sector. This foundational program covers key topics including hazard identification, risk assessment procedures, personal protective equipment usage, and safe working practices on construction sites. Students will learn about legal requirements, accident prevention strategies, emergency procedures, and the importance of maintaining a safety-first culture in construction environments. The course includes practical elements such as site safety inspections, safety equipment demonstrations, and case study analyses of construction accidents. Emphasis is placed on developing safety awareness, understanding regulatory compliance requirements, and building the knowledge foundation necessary for safe participation in construction activities.",
-      img: getCourseImage("proqual", 4),
     },
   ],
 
@@ -557,41 +559,28 @@ const courseData = {
 
     // VTCT Education & Training Courses (reordered according to specifications)
     {
+      id: 73,
+      title: "Level 2 Award in Invigilating Remote Tests and Examinations",
+      desc: "This specialized Level 2 Award in Invigilating Remote Tests and Examinations provides comprehensive training for individuals seeking to become qualified invigilators for remote testing and examination environments. The course covers essential skills including digital platform management, remote monitoring techniques, security protocols, and student support procedures. Participants will learn about academic integrity, technical troubleshooting, and the unique challenges of online assessment environments. This qualification is essential for educational institutions, professional bodies, and organizations conducting remote examinations.",
+      img: getCourseImage("vtct", 12),
+    },
+    {
       id: 2,
       title: "Level 3 Award in Education and Training",
       desc: "This Level 3 Award in Education and Training provides comprehensive foundation training for individuals entering the education and training sector. The course covers essential teaching principles, learning theories, and practical training delivery methods. Students will develop skills in session planning, learner engagement, and basic assessment techniques. This qualification is ideal for new trainers, workplace mentors, and those seeking to develop their training capabilities in professional environments.",
-      img: getCourseImage("icq", 3),
+      img: getCourseImage("vtct", 3),
     },
     {
       id: 4,
       title: "Level 3 Certificate in Assessing Vocational Achievement",
       desc: "The Level 3 Certificate in Assessing Vocational Achievement is a comprehensive qualification that prepares individuals to become competent vocational assessors across diverse industry sectors. This course covers the complete assessment cycle, from initial planning and preparation through to final evaluation and feedback delivery. Students will master various assessment methods including observation, questioning, professional discussions, and portfolio reviews. The program emphasizes fair, valid, and reliable assessment practices while ensuring compliance with awarding body requirements. Participants will develop expertise in supporting learners through their qualification journey, maintaining accurate records, and contributing to quality assurance processes within their organizations.",
-      img: getCourseImage("icq", 5),
+      img: getCourseImage("vtct", 5),
     },
     {
       id: 70,
       title: "Level 4 Certificate in Education and Training",
       desc: "This Level 4 Certificate in Education and Training provides intermediate-level training for individuals seeking to develop their teaching and training skills. The course covers advanced pedagogical methods, curriculum design, inclusive learning practices, and professional development strategies. Students will enhance their ability to create engaging learning environments, assess student progress effectively, and contribute to educational quality improvement initiatives within their organizations.",
       img: getCourseImage("icq", 10),
-    },
-    {
-      id: 56,
-      title: "Level 5 Diploma in Education and Training",
-      desc: "This comprehensive Level 5 Diploma in Education and Training provides advanced qualification for experienced educators and training professionals. The course covers sophisticated teaching methodologies, curriculum development, educational leadership, and advanced assessment strategies. Students will master complex pedagogical approaches, research methods, and quality assurance processes essential for senior roles in education and training organizations.",
-      img: getCourseImage("icq", 6),
-    },
-    {
-      id: 57,
-      title: "Level 5 Diploma in Teaching (Further Education and Skills)",
-      desc: "This specialized Level 5 Diploma in Teaching for Further Education and Skills sector provides comprehensive training for teachers working in colleges, adult education, and vocational training environments. The course covers advanced teaching techniques, curriculum planning, student support strategies, and sector-specific regulatory requirements. Students will develop expertise in delivering education to diverse learner groups with varying educational backgrounds and career aspirations.",
-      img: getCourseImage("icq", 7),
-    },
-    // Level 5 Diploma in Teaching
-    {
-      id: 74,
-      title: "Level 5 Diploma in Teaching",
-      desc: "This Level 5 Diploma in Teaching provides advanced qualification for experienced educators and training professionals seeking senior teaching roles. The course covers sophisticated pedagogical approaches, educational research, leadership in learning environments, and advanced assessment methodologies. Students will develop expertise in educational innovation, quality enhancement, and strategic curriculum development across various educational settings.",
-      img: getCourseImage("icq", 8),
     },
     {
       id: 71,
@@ -605,12 +594,27 @@ const courseData = {
       desc: "This Level 4 Award in Understanding the Internal Quality Assurance of Assessment Processes and Practice provides foundational knowledge of internal quality assurance principles and practices in assessment environments. The course covers quality assurance frameworks, assessment verification, team leadership, and continuous improvement strategies essential for educational quality assurance roles. Students will gain comprehensive understanding of regulatory requirements, best practice methodologies, and effective quality management approaches.",
       img: getCourseImage("icq", 11),
     },
+
     {
-      id: 73,
-      title: "Level 2 Award in Invigilating Remote Tests and Examinations",
-      desc: "This specialized Level 2 Award in Invigilating Remote Tests and Examinations provides comprehensive training for individuals seeking to become qualified invigilators for remote testing and examination environments. The course covers essential skills including digital platform management, remote monitoring techniques, security protocols, and student support procedures. Participants will learn about academic integrity, technical troubleshooting, and the unique challenges of online assessment environments. This qualification is essential for educational institutions, professional bodies, and organizations conducting remote examinations.",
-      img: getCourseImage("icq", 12),
+      id: 56,
+      title: "Level 5 Diploma in Education and Training",
+      desc: "This comprehensive Level 5 Diploma in Education and Training provides advanced qualification for experienced educators and training professionals. The course covers sophisticated teaching methodologies, curriculum development, educational leadership, and advanced assessment strategies. Students will master complex pedagogical approaches, research methods, and quality assurance processes essential for senior roles in education and training organizations.",
+      img: getCourseImage("vtct", 6),
     },
+    {
+      id: 57,
+      title: "Level 5 Diploma in Teaching (Further Education and Skills)",
+      desc: "This specialized Level 5 Diploma in Teaching for Further Education and Skills sector provides comprehensive training for teachers working in colleges, adult education, and vocational training environments. The course covers advanced teaching techniques, curriculum planning, student support strategies, and sector-specific regulatory requirements. Students will develop expertise in delivering education to diverse learner groups with varying educational backgrounds and career aspirations.",
+      img: getCourseImage("vtct", 7),
+    },
+    // Level 5 Diploma in Teaching
+    {
+      id: 74,
+      title: "Level 5 Diploma in Teaching",
+      desc: "This Level 5 Diploma in Teaching provides advanced qualification for experienced educators and training professionals seeking senior teaching roles. The course covers sophisticated pedagogical approaches, educational research, leadership in learning environments, and advanced assessment methodologies. Students will develop expertise in educational innovation, quality enhancement, and strategic curriculum development across various educational settings.",
+      img: getCourseImage("vtct", 8),
+    },
+    
 
     // PROQUAL Quality Assurance Courses
     {
@@ -717,14 +721,14 @@ const courseData = {
       id: 12,
       title: "Level 3 C2 - Itec Esol Certificate International",
       desc: "This expert-level Itec Esol Certificate International at Level 3 C2 provides the highest standard of English language training for students seeking mastery-level communication skills. The course covers sophisticated linguistic analysis, advanced academic writing, and expert-level communication abilities. Students will achieve the language proficiency required for university study, professional leadership, and international career opportunities.",
-      img: getCourseImage("vtct", 13),
+      img: getCourseImage("vtct", 9),
     },
-    {
-      id: 70,
-      title: "Level 5 Diploma in Teaching",
-      desc: "This Level 5 Diploma in Teaching provides advanced qualification for experienced educators and training professionals seeking senior teaching roles. The course covers sophisticated pedagogical approaches, educational research, leadership in learning environments, and advanced assessment methodologies. Students will develop expertise in educational innovation, quality enhancement, and strategic curriculum development across various educational settings.",
-      img: getCourseImage("vtct", 15),
-    },
+    // {
+    //   id: 70,
+    //   title: "Level 5 Diploma in Teaching",
+    //   desc: "This Level 5 Diploma in Teaching provides advanced qualification for experienced educators and training professionals seeking senior teaching roles. The course covers sophisticated pedagogical approaches, educational research, leadership in learning environments, and advanced assessment methodologies. Students will develop expertise in educational innovation, quality enhancement, and strategic curriculum development across various educational settings.",
+    //   img: getCourseImage("vtct", 15),
+    // },
     // {
     //   id: 76,
     //   title: "Level 2 Award in Invigilatin Remote Tests and Examinations",
@@ -736,6 +740,13 @@ const courseData = {
   // Combined Taxi & Private Hire category (SQA + ICQ courses)
   TAXI: [
     // SQA courses
+    {
+      id: 46,
+      title:
+        "BTEC Level 2 ICQ: Introduction to the Role of the Professional Taxi and Private Hire  (England)",
+      desc: "This comprehensive iCQ BTEC Level 2 course provides an essential introduction to the professional standards and responsibilities required in the taxi and private hire industry across the United Kingdom. The program covers fundamental aspects of professional driving including customer service principles, industry regulations, safety protocols, and professional conduct standards. Students will gain knowledge of licensing requirements, vehicle maintenance basics, passenger interaction skills, and the legal framework governing taxi and private hire operations. The course emphasizes developing professional attitudes, understanding service quality expectations, and building confidence in providing safe, reliable transportation services. This qualification serves as an ideal starting point for individuals seeking to enter the passenger transport sector with a solid foundation of industry knowledge and professional competencies.",
+      img: getCourseImage("icq", 1),
+    },
     {
       id: 1,
       title:
@@ -751,13 +762,7 @@ const courseData = {
       img: getCourseImage("sqa", 2),
     },
     // ICQ courses
-    {
-      id: 46,
-      title:
-        "BTEC Level 2 ICQ: Introduction to the Role of the Professional Taxi and Private Hire  (England)",
-      desc: "This comprehensive iCQ BTEC Level 2 course provides an essential introduction to the professional standards and responsibilities required in the taxi and private hire industry across the United Kingdom. The program covers fundamental aspects of professional driving including customer service principles, industry regulations, safety protocols, and professional conduct standards. Students will gain knowledge of licensing requirements, vehicle maintenance basics, passenger interaction skills, and the legal framework governing taxi and private hire operations. The course emphasizes developing professional attitudes, understanding service quality expectations, and building confidence in providing safe, reliable transportation services. This qualification serves as an ideal starting point for individuals seeking to enter the passenger transport sector with a solid foundation of industry knowledge and professional competencies.",
-      img: getCourseImage("icq", 1),
-    },
+    
   ],
 };
 

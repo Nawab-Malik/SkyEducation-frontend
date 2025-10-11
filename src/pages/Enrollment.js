@@ -44,8 +44,8 @@ const EnrollmentPage = () => {
 
   const getAwardingBodyLogo = (courseImg) => {
     // Extract awarding body from image path
-    const imgPath = courseImg || '';
-    if (imgPath.includes('icq')) {
+    const imgPath = courseImg || "";
+    if (imgPath.includes("icq")) {
       return (
         <img
           src="/Assests/partner04.png"
@@ -54,7 +54,7 @@ const EnrollmentPage = () => {
           className="awarding-body-img"
         />
       );
-    } else if (imgPath.includes('seg')) {
+    } else if (imgPath.includes("seg")) {
       return (
         <img
           src="/Assests/partner02.png"
@@ -63,7 +63,7 @@ const EnrollmentPage = () => {
           className="awarding-body-img"
         />
       );
-    } else if (imgPath.includes('persons')) {
+    } else if (imgPath.includes("persons")) {
       return (
         <img
           src="/Assests/partner05.png"
@@ -72,7 +72,7 @@ const EnrollmentPage = () => {
           className="awarding-body-img"
         />
       );
-    } else if (imgPath.includes('proqual')) {
+    } else if (imgPath.includes("proqual")) {
       return (
         <img
           src="/Assests/partner00.png"
@@ -81,7 +81,7 @@ const EnrollmentPage = () => {
           className="awarding-body-img"
         />
       );
-    } else if (imgPath.includes('vtct')) {
+    } else if (imgPath.includes("vtct")) {
       return (
         <img
           src="/Assests/partner01.png"
@@ -90,7 +90,7 @@ const EnrollmentPage = () => {
           className="awarding-body-img"
         />
       );
-    } else if (imgPath.includes('sqa')) {
+    } else if (imgPath.includes("sqa")) {
       return (
         <img
           src="/Assests/partner06.png"
@@ -104,29 +104,33 @@ const EnrollmentPage = () => {
   };
 
   const getCourseCategory = (courseImg) => {
-    const imgPath = courseImg || '';
+    const imgPath = courseImg || "";
 
     // Check for VTCT Functional Skills courses specifically
-    if (imgPath.includes('vtct') &&
-        (imgPath.includes('vtct14') || imgPath.includes('vtct15') ||
-         imgPath.includes('vtct16') || imgPath.includes('vtct17'))) {
-      return 'VTCT';
+    if (
+      imgPath.includes("vtct") &&
+      (imgPath.includes("vtct14") ||
+        imgPath.includes("vtct15") ||
+        imgPath.includes("vtct16") ||
+        imgPath.includes("vtct17"))
+    ) {
+      return "VTCT";
     }
 
-    if (imgPath.includes('icq')) {
-      return 'Education & Training';
-    } else if (imgPath.includes('seg')) {
-      return 'Automotive & MOT';
-    } else if (imgPath.includes('persons')) {
-      return 'English & Maths';
-    } else if (imgPath.includes('proqual')) {
-      return 'Construction';
-    } else if (imgPath.includes('vtct')) {
-      return 'ESOL Certificates';
-    } else if (imgPath.includes('sqa')) {
-      return 'Taxi & Private Hire';
+    if (imgPath.includes("icq")) {
+      return "Education & Training";
+    } else if (imgPath.includes("seg")) {
+      return "Automotive & MOT";
+    } else if (imgPath.includes("persons")) {
+      return "English & Maths";
+    } else if (imgPath.includes("proqual")) {
+      return "Construction";
+    } else if (imgPath.includes("vtct")) {
+      return "ESOL Certificates";
+    } else if (imgPath.includes("sqa")) {
+      return "Taxi & Private Hire";
     }
-    return 'General';
+    return "General";
   };
 
   const handleSubmit = async (e) => {
@@ -140,20 +144,22 @@ const EnrollmentPage = () => {
     }
 
     try {
-      const response = await fetch("https://formspree.io/f/mwprejkv", {
+      const response = await fetch("http://localhost:5000/api/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setAlertType("success");
         setAlertMessage(
           "Thank you for your enrollment application! We'll contact you within 24 hours."
         );
         setShowAlert(true);
-
-        // Reset form
         setFormData({
           firstName: "",
           lastName: "",
@@ -166,15 +172,14 @@ const EnrollmentPage = () => {
           terms: false,
         });
       } else {
-        throw new Error("Failed to send form");
+        throw new Error(data.message);
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       setAlertType("danger");
-      setAlertMessage("Something went wrong. Please try again later.");
+      setAlertMessage("Failed to submit form. Please try again later.");
       setShowAlert(true);
     }
-
-    setTimeout(() => setShowAlert(false), 5000);
   };
 
   return (
@@ -201,8 +206,12 @@ const EnrollmentPage = () => {
                   {/* Middle - Course Info */}
                   <Col lg={4} md={4} className="text-center">
                     <div className="p-4">
-                      <h5 className="fw-bold text-dark mb-2">Selected Course</h5>
-                      <h4 className="text-primary mb-3 course-title">{courseData.title}</h4>
+                      <h5 className="fw-bold text-dark mb-2">
+                        Selected Course
+                      </h5>
+                      <h4 className="text-primary mb-3 course-title">
+                        {courseData.title}
+                      </h4>
                       <p className="text-muted course-description">
                         {courseData.desc}
                       </p>
@@ -497,7 +506,7 @@ const EnrollmentPage = () => {
                       />
                     </Form.Group>
 
-                    <div className="text-center">
+                    <div className="text-center d-flex justify-content-center flex-wrap">
                       <Button
                         type="submit"
                         className="enroll-btn"
@@ -510,7 +519,7 @@ const EnrollmentPage = () => {
                           backgroundColor: "#6c757d",
                           transition: "all 0.3s ease",
                           minWidth: "180px",
-                          marginRight: "16px",
+                          margin: "10px", // Equal margin on all sides
                         }}
                       >
                         Submit Now
@@ -532,19 +541,25 @@ const EnrollmentPage = () => {
                             boxShadow: "0 4px 15px rgba(2, 174, 241, 0.3)",
                             minWidth: "180px",
                             color: "white",
+                            margin: "10px", // Equal margin on all sides
                           }}
                           onMouseEnter={(e) => {
                             e.target.style.backgroundColor = "#0EA5E9";
                             e.target.style.transform = "translateY(-2px)";
-                            e.target.style.boxShadow = "0 6px 20px rgba(2, 174, 241, 0.4)";
+                            e.target.style.boxShadow =
+                              "0 6px 20px rgba(2, 174, 241, 0.4)";
                           }}
                           onMouseLeave={(e) => {
                             e.target.style.backgroundColor = "#02AEF1";
                             e.target.style.transform = "translateY(0)";
-                            e.target.style.boxShadow = "0 4px 15px rgba(2, 174, 241, 0.3)";
+                            e.target.style.boxShadow =
+                              "0 4px 15px rgba(2, 174, 241, 0.3)";
                           }}
                           onClick={() => {
-                            window.open("https://buy.stripe.com/bJe4gBb8LcynaNj6gZ0Ba01", "_blank");
+                            window.open(
+                              "https://buy.stripe.com/bJe4gBb8LcynaNj6gZ0Ba01",
+                              "_blank"
+                            );
                           }}
                         >
                           Pay Now

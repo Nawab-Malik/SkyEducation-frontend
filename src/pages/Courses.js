@@ -60,8 +60,15 @@ const CoursesPage = () => {
     { key: "ALL", name: "All Courses", count: courseData.ALL.length },
     { key: "SEG", name: "Automotive & MOT", count: courseData.SEG.length },
     {
-      key: "VTCT",
+      key: "BEAUTY_EXT",
       name: "Beauty & Aesthetics",
+      count: 20,
+      isExternal: true,
+      link: "https://skyaestheticstraining.co.uk/",
+    },
+    {
+      key: "VTCT",
+      name: "ESOL Certificates",
       count: courseData.VTCT.length,
     },
     {
