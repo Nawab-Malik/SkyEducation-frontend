@@ -10,6 +10,7 @@ import {
   Badge,
 } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
+import { generateSlug } from "../utils/courseUtils";
 import courseData from "../components/CourseData";
 import searchIconDark from "../Assests/searchicondark.png";
 import Footer from "../components/Footer";
@@ -148,7 +149,8 @@ const CoursesPage = () => {
   };
 
   const handleEnrollClick = (course) => {
-    navigate("/enroll", { state: { course } });
+    const slug = generateSlug(course.title);
+    navigate(`/enroll/${slug}`, { state: { course } });
   };
 
   return (

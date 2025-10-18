@@ -71,7 +71,7 @@ function Newsletter() {
       </Container>
 
       {/* Responsive custom styles */}
-      <style jsx>{`
+      <style>{`
         @media (max-width: 992px) {
           .container {
             width: 98% !important;

@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button, Card, Badge } from "react-bootstrap";
+import { generateSlug } from '../utils/courseUtils';
 
 const CourseDetails = () => {
   const { category, courseId } = useParams();
@@ -29,7 +30,8 @@ const CourseDetails = () => {
   }
 
   const handleEnroll = () => {
-    navigate('/enroll', { state: { course } });
+    const slug = generateSlug(course.title);
+    navigate(`/enroll/${slug}`, { state: { course } });
   };
 
   return (

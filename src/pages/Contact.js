@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import emailjs from '@emailjs/browser';
 import logo from "../Assests/logo00.png";
 import Footer from "../components/Footer";
 import "./contact.css";
+
+// EmailJS configuration
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_1m5z38c';
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_t63r45u';
+const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'Hv9i_b-YOmO_7jxjR';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +20,12 @@ const ContactPage = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(PUBLIC_KEY);
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -26,16 +38,35 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setSubmitStatus({ success: false, message: '' });
 
     try {
-      const response = await fetch("https://formspree.io/f/mwprejkv", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'Info@skyeducationltd.com'
+      };
 
-      if (response.ok) {
-        alert("✅ Thank you! Your message has been sent.");
+      console.log('Sending contact form with params:', templateParams);
+
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams
+      );
+
+      console.log('EmailJS Success:', result);
+
+      if (result.status === 200) {
+        setSubmitStatus({
+          success: true,
+          message: '✅ Thank you! Your message has been sent successfully. We will get back to you soon.'
+        });
+        // Reset form
         setFormData({
           name: "",
           email: "",
@@ -44,11 +75,32 @@ const ContactPage = () => {
           message: "",
         });
       } else {
-        alert("❌ Something went wrong. Please try again.");
+        throw new Error('Failed to send email');
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("⚠️ Network error. Please try again.");
+      console.error('=== EmailJS Error Details ===');
+      console.error('Full Error:', error);
+      console.error('Error Text:', error.text);
+      console.error('Error Status:', error.status);
+      console.error('Error Message:', error.message);
+      console.error('Service ID:', SERVICE_ID);
+      console.error('Template ID:', TEMPLATE_ID);
+      console.error('Public Key:', PUBLIC_KEY);
+      console.error('============================');
+
+      let errorMessage = '❌ Failed to send message. ';
+      if (error.text) {
+        errorMessage += `Error: ${error.text}`;
+      } else if (error.status === 400) {
+        errorMessage += 'Template configuration error. Please check: 1) Template ID exists, 2) All template variables are correct, 3) Email service is connected.';
+      } else {
+        errorMessage += 'Please try again later.';
+      }
+
+      setSubmitStatus({
+        success: false,
+        message: errorMessage
+      });
     } finally {
       setLoading(false);
     }
@@ -161,6 +213,12 @@ const ContactPage = () => {
                   <h3 className="fw-bold mb-4 text-primary">
                     Send Us a Message
                   </h3>
+
+                  {submitStatus.message && (
+                    <div className={`alert ${submitStatus.success ? 'alert-success' : 'alert-danger'} mb-4`}>
+                      {submitStatus.message}
+                    </div>
+                  )}
 
                   <Form onSubmit={handleSubmit}>
                     <Row>

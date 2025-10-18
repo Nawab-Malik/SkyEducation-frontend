@@ -21,6 +21,7 @@ import EnrollmentPage from "./pages/Enrollment";
 import ContactPage from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import EmailJSTest from "./components/EmailJSTest";
 
 const App = () => {
   return (
@@ -54,7 +55,8 @@ const App = () => {
         {/* Courses Page */}
         <Route path="/courses" element={<CoursesPage />} />
 
-        {/* Enrollment Page */}
+        {/* Enrollment Page - supports both state and URL params */}
+        <Route path="/enroll/:courseSlug" element={<EnrollmentPage />} />
         <Route path="/enroll" element={<EnrollmentPage />} />
 
         {/* Contact Page */}
@@ -65,6 +67,9 @@ const App = () => {
 
         {/* Terms & Conditions Page */}
         <Route path="/terms" element={<TermsConditions />} />
+
+        {/* EmailJS Test Page */}
+        <Route path="/test-email" element={<EmailJSTest />} />
        
       </Routes>
     </Router>

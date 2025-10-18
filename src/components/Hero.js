@@ -6,6 +6,7 @@ import { loadFull } from "tsparticles";
 import logo from "../Assests/logo00.png";
 import searchWhite from "../Assests/searchiconwhite.png";
 import courseData from "./CourseData";
+import EnrollmentForm from "./EnrollmentForm";
 import "./home.css";
 
 // Partner logos
@@ -239,6 +240,9 @@ function Hero() {
     setCourseSearchTerm(course.displayTitle || course.title);
   };
 
+  const [showEnrollmentForm, setShowEnrollmentForm] = useState(false);
+  const [selectedCourseName, setSelectedCourseName] = useState('');
+
   const handleSearch = () => {
     if (selectedCourse && selectedCategory) {
       // Navigate to courses page with selected course data
@@ -261,6 +265,16 @@ function Hero() {
       // Navigate to courses page without specific selection
       navigate("/courses");
     }
+  };
+
+  const handleEnrollClick = () => {
+    if (selectedCourse) {
+      const course = getCoursesForCategory().find(c => c.id === selectedCourse);
+      setSelectedCourseName(course?.displayTitle || course?.title || '');
+    } else {
+      setSelectedCourseName('');
+    }
+    setShowEnrollmentForm(true);
   };
   return (
     <section
@@ -517,9 +531,24 @@ function Hero() {
                 style={{ width: "18px", marginLeft: "6px" }}
               />
             </Button>
+
+            <Button
+              onClick={handleEnrollClick}
+              disabled={!selectedCourse}
+              variant="outline-light"
+              className="ms-3 rounded-pill px-4 py-2 mt-2 d-flex align-items-center justify-content-center"
+            >
+              Enroll Now
+            </Button>
           </div>
         </Row>
       </Container>
+
+      <EnrollmentForm
+        show={showEnrollmentForm}
+        onHide={() => setShowEnrollmentForm(false)}
+        courseName={selectedCourseName}
+      />
     </section>
   );
 }

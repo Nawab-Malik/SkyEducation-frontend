@@ -5,6 +5,7 @@ import fileIcon from "../Assests/fileregicon.png";
 import forwardIcon from "../Assests/forwardicon.png";
 import backwardIcon from "../Assests/backwardicon.png";
 import courseData from "./CourseData";
+import { generateSlug } from "../utils/courseUtils";
 
 import "./courses.css";
 
@@ -49,7 +50,9 @@ const CoursesSection = () => {
 
   // handle enrollment navigation
   const handleEnrollClick = (course) => {
-    navigate("/enroll", { state: { course } });
+    // Navigate with course slug in URL path for SEO-friendly URLs
+    const slug = generateSlug(course.title);
+    navigate(`/enroll/${slug}`, { state: { course } });
   };
 
   // helper function to get awarding body for course badge

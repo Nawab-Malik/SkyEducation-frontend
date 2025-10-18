@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, NavDropdown, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Assests/logo00.png";
 import courseData from "./CourseData";
+import { generateSlug } from "../utils/courseUtils";
 import "./home.css";
 
 function NavigationBar() {
@@ -13,9 +14,10 @@ function NavigationBar() {
   // Get the actual SQA and ICQ courses to ensure consistent navigation
   const sqaCourses = courseData.SQA || [];
   const icqCourses = courseData.ICQ || [];
+  const taxiCourses = courseData.TAXI || [];
   const course1 = sqaCourses.find((course) => course.id === 1); // Level 2 SQA
   const course2 = sqaCourses.find((course) => course.id === 2); // Level 5 SQA
-  const course3 = sqaCourses.find((course) => course.id === 3); // BTEC Level 2 ICQ
+  const course3 = taxiCourses.find((course) => course.id === 46); // BTEC Level 2 ICQ
 
   // Function to close mobile menu when navigation item is clicked
   const handleNavClick = () => {
@@ -222,8 +224,10 @@ function NavigationBar() {
                     <NavDropdown.Item
                       onClick={() => {
                         handleNavClick();
-                        if (course1)
-                          navigate("/enroll", { state: { course: course1 } });
+                        if (course1) {
+                          const slug = generateSlug(course1.title);
+                          navigate(`/enroll/${slug}`, { state: { course: course1 } });
+                        }
                       }}
                       className="popular-item"
                     >
@@ -242,8 +246,10 @@ function NavigationBar() {
                     <NavDropdown.Item
                       onClick={() => {
                         handleNavClick();
-                        if (course2)
-                          navigate("/enroll", { state: { course: course2 } });
+                        if (course2) {
+                          const slug = generateSlug(course2.title);
+                          navigate(`/enroll/${slug}`, { state: { course: course2 } });
+                        }
                       }}
                       className="popular-item"
                     >
@@ -263,8 +269,10 @@ function NavigationBar() {
                     <NavDropdown.Item
                       onClick={() => {
                         handleNavClick();
-                        if (course3)
-                          navigate("/enroll", { state: { course: course3 } });
+                        if (course3) {
+                          const slug = generateSlug(course3.title);
+                          navigate(`/enroll/${slug}`, { state: { course: course3 } });
+                        }
                       }}
                       className="popular-item"
                     >
