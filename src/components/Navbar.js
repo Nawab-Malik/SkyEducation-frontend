@@ -49,11 +49,12 @@ function NavigationBar() {
       expand="lg"
       bg="white"
       fixed="top"
-      className="shadow-sm py-2 px-lg-5"
+      className="shadow-sm py-2"
       expanded={expanded}
       onToggle={(expanded) => setExpanded(expanded)}
+      style={{ width: "100vw", left: 0 }}
     >
-      <Container fluid className="px-4">
+      <Container fluid className="px-3 px-lg-4" style={{ width: "100%", maxWidth: "100%" }}>
         {/* Logo goes to Home */}
         <Navbar.Brand
           as={Link}
@@ -200,21 +201,21 @@ function NavigationBar() {
                         </div>
                       </div>
                     </NavDropdown.Item>
-                    {/* <NavDropdown.Item
+                    <NavDropdown.Item
                       as={Link}
-                      to="/courses?category=FUNCTIONAL SKILLS"
+                      to="/courses?category=ChildCare"
                       className="category-item"
                       onClick={handleNavClick}
                     >
                       <div className="d-flex align-items-center">
                         <div className="flex-grow-1">
-                          <div className="fw-semibold">Functional Skills</div>
+                          <div className="fw-semibold">Childcare & Residential Care</div>
                           <small className="text-muted">
-                            Practical English and Maths skills
+                            Childcare & Residential Care
                           </small>
                         </div>
                       </div>
-                    </NavDropdown.Item> */}
+                    </NavDropdown.Item>
                   </div>
                   <div className="col-md-6">
                     <h6 className="dropdown-header text-primary fw-bold mb-1">
@@ -307,9 +308,32 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/about" onClick={handleNavClick}>
               About Us
             </Nav.Link>
-            <Nav.Link as={Link} to="/faqs" onClick={handleNavClick}>
-              FAQ
-            </Nav.Link>
+            
+            {/* FAQ Dropdown */}
+            <NavDropdown
+              id="faq-dropdown"
+              title={<span className="fw-bold">FAQ</span>}
+              className="faq-dropdown"
+            >
+              <NavDropdown.Item as={Link} to="/faqs" onClick={handleNavClick}>
+                <i className="fas fa-question-circle me-2"></i>
+                Frequently Asked Questions
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="/privacy-policy" onClick={handleNavClick}>
+                <i className="fas fa-shield-alt me-2"></i>
+                Privacy Policy
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/terms-conditions" onClick={handleNavClick}>
+                <i className="fas fa-file-contract me-2"></i>
+                Terms & Conditions
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/cookie-policy" onClick={handleNavClick}>
+                <i className="fas fa-cookie-bite me-2"></i>
+                Cookie Policy
+              </NavDropdown.Item>
+            </NavDropdown>
+            
             <Nav.Link as={Link} to="/contact" onClick={handleNavClick}>
               Contact Us
             </Nav.Link>

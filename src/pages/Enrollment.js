@@ -9,33 +9,46 @@ import {
   Alert,
   Badge,
 } from "react-bootstrap";
-import { useLocation, Link, useSearchParams, useParams } from "react-router-dom";
+import {
+  useLocation,
+  Link,
+  useSearchParams,
+  useParams,
+} from "react-router-dom";
 import Footer from "../components/Footer";
 import mailIcon from "../Assests/mailicon.png";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import courseData from "../components/CourseData";
-import { generateSlug, findCourseBySlug, findCourseById } from "../utils/courseUtils";
+import {
+  generateSlug,
+  findCourseBySlug,
+  findCourseById,
+} from "../utils/courseUtils";
 import "./enrollment.css";
+import CourseSearchInput from "../components/CourseSearchInput";
 
 // EmailJS configuration
-const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_1m5z38c';
-const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_t63r45u';
-const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'Hv9i_b-YOmO_7jxjR';
+const SERVICE_ID =
+  process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_1m5z38c";
+const TEMPLATE_ID =
+  process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_t63r45u";
+const PUBLIC_KEY =
+  process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "Hv9i_b-YOmO_7jxjR";
 
 const EnrollmentPage = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const { courseSlug } = useParams(); // Get course slug from URL path
-  const courseId = searchParams.get('id'); // Get course ID from URL query parameter
-  
+  const courseId = searchParams.get("id"); // Get course ID from URL query parameter
+
   // Get course data from location state or fetch by slug/ID from URL
   const [selectedCourse, setSelectedCourse] = useState(null);
-  
+
   useEffect(() => {
     // Priority 1: Use course from location state if available
     if (location.state?.course) {
       setSelectedCourse(location.state.course);
-    } 
+    }
     // Priority 2: Fetch course by slug from URL path parameter
     else if (courseSlug) {
       const foundCourse = findCourseBySlug(courseData, courseSlug);
@@ -63,18 +76,18 @@ const EnrollmentPage = () => {
     email: "",
     phone: "",
     course: "",
-    previousEducation: "",
+    // previousEducation: "",
     message: "",
-    hearAboutUs: "",
+    // hearAboutUs: "",
     terms: false,
   });
-  
+
   // Update form course field when selectedCourse changes
   useEffect(() => {
     if (selectedCourse?.title) {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        course: selectedCourse.title
+        course: selectedCourse.title,
       }));
     }
   }, [selectedCourse]);
@@ -195,18 +208,18 @@ const EnrollmentPage = () => {
     try {
       // Send email using EmailJS
       const templateParams = {
-        to_email: 'Info@skyeducationltd.com',
+        to_email: "Info@skyeducationltd.com",
         from_name: `${formData.firstName} ${formData.lastName}`,
         from_email: formData.email,
         phone: formData.phone,
         course: formData.course,
-        previousEducation: formData.previousEducation || 'Not specified',
-        hearAboutUs: formData.hearAboutUs || 'Not specified',
-        message: formData.message || 'No additional message',
-        reply_to: formData.email
+        // previousEducation: formData.previousEducation || 'Not specified',
+        // hearAboutUs: formData.hearAboutUs || 'Not specified',
+        message: formData.message || "No additional message",
+        reply_to: formData.email,
       };
 
-      console.log('Sending email with params:', templateParams);
+      console.log("Sending email with params:", templateParams);
 
       const result = await emailjs.send(
         SERVICE_ID,
@@ -214,7 +227,7 @@ const EnrollmentPage = () => {
         templateParams
       );
 
-      console.log('EmailJS Success:', result);
+      console.log("EmailJS Success:", result);
 
       if (result.status === 200) {
         setAlertType("success");
@@ -228,31 +241,32 @@ const EnrollmentPage = () => {
           email: "",
           phone: "",
           course: courseData?.title || "",
-          previousEducation: "",
+          // previousEducation: "",
           message: "",
-          hearAboutUs: "",
+          // hearAboutUs: "",
           terms: false,
         });
       } else {
-        throw new Error('Failed to send email');
+        throw new Error("Failed to send email");
       }
     } catch (error) {
-      console.error('=== EmailJS Error Details ===');
-      console.error('Full Error:', error);
-      console.error('Error Text:', error.text);
-      console.error('Error Status:', error.status);
-      console.error('Error Message:', error.message);
-      console.error('Service ID:', SERVICE_ID);
-      console.error('Template ID:', TEMPLATE_ID);
-      console.error('Public Key:', PUBLIC_KEY);
-      console.error('============================');
-      
+      console.error("=== EmailJS Error Details ===");
+      console.error("Full Error:", error);
+      console.error("Error Text:", error.text);
+      console.error("Error Status:", error.status);
+      console.error("Error Message:", error.message);
+      console.error("Service ID:", SERVICE_ID);
+      console.error("Template ID:", TEMPLATE_ID);
+      console.error("Public Key:", PUBLIC_KEY);
+      console.error("============================");
+
       setAlertType("danger");
       let errorMessage = "Failed to submit form. ";
       if (error.text) {
         errorMessage += `Error: ${error.text}`;
       } else if (error.status === 400) {
-        errorMessage += "Template configuration error. Please verify your EmailJS template variables match the form fields.";
+        errorMessage +=
+          "Template configuration error. Please verify your EmailJS template variables match the form fields.";
       } else {
         errorMessage += "Please try again later.";
       }
@@ -271,17 +285,21 @@ const EnrollmentPage = () => {
             <p className="lead text-muted">
               Take the next step in your professional development journey
             </p>
-            
+
             {/* Display Course Name from URL if available */}
             {(courseSlug || courseId) && selectedCourse && (
               <div className="mb-4">
-                <Badge bg="success" className="px-4 py-2" style={{ fontSize: "1.1rem" }}>
+                <Badge
+                  bg="success"
+                  className="px-4 py-2"
+                  style={{ fontSize: "1.1rem" }}
+                >
                   <i className="fas fa-check-circle me-2"></i>
                   {selectedCourse.title}
                 </Badge>
               </div>
             )}
-            
+
             {/* Show message if course slug/ID in URL but not found */}
             {(courseSlug || courseId) && !selectedCourse && (
               <div className="mb-4">
@@ -291,7 +309,7 @@ const EnrollmentPage = () => {
                 </Badge>
               </div>
             )}
-            
+
             {selectedCourse && (
               <div className="mt-4 w-100">
                 <Row className="g-4 justify-content-center">
@@ -516,52 +534,20 @@ const EnrollmentPage = () => {
                       </Col>
                     </Row>
 
-                    <Form.Group className="mb-3">
-                      <Form.Label className="fw-medium">
-                        Course of Interest *
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="course"
-                        value={formData.course}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter course name"
-                      />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3">
-                      <Form.Label className="fw-medium">
-                        Previous Education/Experience
-                      </Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        rows={3}
-                        name="previousEducation"
-                        value={formData.previousEducation}
-                        onChange={handleInputChange}
-                        placeholder="Tell us about your relevant education or experience"
-                      />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3">
-                      <Form.Label className="fw-medium">
-                        How did you hear about us?
-                      </Form.Label>
-                      <Form.Select
-                        name="hearAboutUs"
-                        value={formData.hearAboutUs}
-                        onChange={handleInputChange}
-                      >
-                        <option value="">Please select</option>
-                        <option value="google">Google Search</option>
-                        <option value="social-media">Social Media</option>
-                        <option value="friend">Friend/Family</option>
-                        <option value="website">Our Website</option>
-                        <option value="advertisement">Advertisement</option>
-                        <option value="other">Other</option>
-                      </Form.Select>
-                    </Form.Group>
+                    {!selectedCourse && (
+                      <Form.Group className="mb-3">
+                        <Form.Label className="fw-medium">
+                          Course of Interest *
+                        </Form.Label>
+                        <CourseSearchInput
+                          value={formData.course}
+                          onChange={(value) =>
+                            setFormData((prev) => ({ ...prev, course: value }))
+                          }
+                          required
+                        />
+                      </Form.Group>
+                    )}
 
                     <Form.Group className="mb-4">
                       <Form.Label className="fw-medium">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import NavigationBar from "./components/Navbar";
@@ -21,13 +21,21 @@ import EnrollmentPage from "./pages/Enrollment";
 import ContactPage from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import CookiePolicy from "./pages/CookiePolicy";
 import EmailJSTest from "./components/EmailJSTest";
+import CookieConsent from "./components/CookieConsent";
+import { initAnalytics } from "./utils/analytics";
 
 const App = () => {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
       <NavigationBar />
+      <CookieConsent />
       <Routes>
         {/* Home Page */}
         <Route
@@ -63,10 +71,13 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
 
         {/* Privacy Policy Page */}
-        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Terms & Conditions Page */}
-        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+
+        {/* Cookie Policy Page */}
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
 
         {/* EmailJS Test Page */}
         <Route path="/test-email" element={<EmailJSTest />} />

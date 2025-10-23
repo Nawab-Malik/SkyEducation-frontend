@@ -85,6 +85,11 @@ const CoursesPage = () => {
     { key: "TAXI", name: "Taxi & Private Hire", count: courseData.TAXI.length },
     // { key: "SQA", name: "SQA", count: courseData.SQA.length },
     { key: "ICQ", name: "Education & Training", count: courseData.ICQ.length },
+     {
+      key: "ChildCare",
+      name: " Childcare & Residential Care",
+      count: courseData["ChildCare"].length,
+    },
   ];
 
   const filteredAndSortedCourses = useMemo(() => {

@@ -52,6 +52,8 @@ function Hero() {
       case "SQA":
       case "TAXI":
         return "SQA";
+      case "ChildCare":
+        return "VTCT";
       default:
         return "";
     }
@@ -219,6 +221,7 @@ function Hero() {
     { key: "PRO QUAL", name: "Construction" },
     { key: "TAXI", name: "Taxi & Private Hire" },
     { key: "ICQ", name: "Education & Training" },
+    { key: "ChildCare", name: "Childcare & Residential Care" },
   ];
 
   const getCoursesForCategory = () => {

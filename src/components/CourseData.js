@@ -584,13 +584,15 @@ const courseData = {
     },
     {
       id: 71,
-      title: "Level 4 Award in the Internal Quality Assurance of Assessment Process and Practice",
+      title:
+        "Level 4 Award in the Internal Quality Assurance of Assessment Process and Practice",
       desc: "This Level 4 Award in the Internal Quality Assurance of Assessment Process and Practice provides specialized training for professionals responsible for maintaining and improving assessment quality within educational and training organizations. The course covers internal quality assurance frameworks, assessment verification procedures, team leadership, and continuous improvement strategies. Students will gain expertise in supporting assessor development, ensuring assessment reliability, and implementing effective internal quality management approaches.",
       img: getCourseImage("icq", 9),
     },
     {
       id: 72,
-      title: "Level 4 Award in Understanding the Internal Quality Assurance of Assessment Processes and Practice",
+      title:
+        "Level 4 Award in Understanding the Internal Quality Assurance of Assessment Processes and Practice",
       desc: "This Level 4 Award in Understanding the Internal Quality Assurance of Assessment Processes and Practice provides foundational knowledge of internal quality assurance principles and practices in assessment environments. The course covers quality assurance frameworks, assessment verification, team leadership, and continuous improvement strategies essential for educational quality assurance roles. Students will gain comprehensive understanding of regulatory requirements, best practice methodologies, and effective quality management approaches.",
       img: getCourseImage("icq", 11),
     },
@@ -614,7 +616,6 @@ const courseData = {
       desc: "This Level 5 Diploma in Teaching provides advanced qualification for experienced educators and training professionals seeking senior teaching roles. The course covers sophisticated pedagogical approaches, educational research, leadership in learning environments, and advanced assessment methodologies. Students will develop expertise in educational innovation, quality enhancement, and strategic curriculum development across various educational settings.",
       img: getCourseImage("vtct", 8),
     },
-    
 
     // PROQUAL Quality Assurance Courses
     {
@@ -723,6 +724,7 @@ const courseData = {
       desc: "This expert-level Itec Esol Certificate International at Level 3 C2 provides the highest standard of English language training for students seeking mastery-level communication skills. The course covers sophisticated linguistic analysis, advanced academic writing, and expert-level communication abilities. Students will achieve the language proficiency required for university study, professional leadership, and international career opportunities.",
       img: getCourseImage("vtct", 9),
     },
+
     // {
     //   id: 70,
     //   title: "Level 5 Diploma in Teaching",
@@ -736,7 +738,40 @@ const courseData = {
     //   img: getCourseImage("vtct", 18),
     // },
   ],
-
+  ChildCare: [
+    {
+      id: 1,
+      title: "Level 2 Diploma for Early Years Practitioner",
+      desc: "This qualification also allows learners to learn, develop and practise selected skills required for progression in the sector and to provide opportunities for progression to the Level 3 Diploma and other related qualifications in the sector. If you are looking to up-skill and/or advance to a higher role within childcare then you might consider taking the:• VTCT (Skillsfirst) Level 3 Diploma for the Children and Young People’s Workforce (Early Years Educator) (RQF)or other similar child care qualifications.",
+      img: getCourseImage("vtct", 6),
+    },
+    {
+      id: 2,
+      title: "Level 3 Diploma for Early Years Educator",
+      desc: "The Level 3 Diploma aims to guide and assess development of knowledge and skills relating to the early learning workforce. This qualification confirms competence in this area where appropriate and serves as the required qualification (for all new practitioners) for registration and regulatory requirements in the sector.This qualification has been designed to:• provide a broad background understanding of the early learning workforce sector and an introduction to the practical skills and knowledge required• provide an awareness of the range of jobs and work settings in the early learning sector• enable learners to make an informed assessment of their own aptitude for work in this sector and to make informed decisions about careers",
+      img: getCourseImage("vtct", 7),
+    },
+    {
+      id: 3,
+      title:
+        "Level 3 Diploma for the Children and Young People's Workforce (Early Years Educator)",
+      desc: "An Early Years Educator is responsible for making plans and supervises child-initiated and adult-led activities, based upon the specific needs and interests of each individual child. An Early Years Educator helps support children with the development of numeracy and language skills through games and play. They have a key personal responsibility to help ensure each child feels safe and secure. An Early Years Educator is expected to observe each child and will shape their learning experience to reflect their observations. They play a crucial role in the development of these budding minds at a young age. They may also be required to manage, directly or indirectly the care needs of an individual child such as feeding, changing nappies and administration of medicine.",
+      img: getCourseImage("vtct", 8),
+    },
+    {
+      id: 4,
+      title: "Level 3 Diploma for Residential Childcare",
+      desc: "The Level 3 Diploma for Residential Childcare (England) has been announced by Government as part of the current reform of children’s residential care.A key driver for reform has been the sexual exploitation of children in care by organised groups in various localities, and the shortfalls in care are highlighted by this. Therefore it is hoped that this qualification will improve the quality of care provided to vulnerable children and young people in residential care by guiding and assessing the development of knowledge and skills and to confirm competence.",
+      img: getCourseImage("vtct", 9),
+    },
+    {
+      id: 5,
+      title:
+        "Level 5 Diploma in Leadership and Management for Residential Childcare",
+      desc: "This qualification provides the skills and knowledge needed to manage practice and lead others in residential childcare settings for children and young people. The qualification enables the learner to gain essential skills and knowledge for leading in a residential childcare setting, including:• leading and managing a team• leading and managing group living• leading practice to support children and young people• implementing policies and procedures",
+      img: getCourseImage("vtct", 5),
+    },
+  ],
   // Combined Taxi & Private Hire category (SQA + ICQ courses)
   TAXI: [
     // SQA courses
@@ -762,7 +797,6 @@ const courseData = {
       img: getCourseImage("sqa", 2),
     },
     // ICQ courses
-    
   ],
 };
 

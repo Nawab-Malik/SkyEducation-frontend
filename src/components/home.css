@@ -46,11 +46,24 @@
   color: #02aef1;
 }
 
-/* navbar custom styling (underlining navlinks on hover) */
+/* Navbar full width styling */
+.navbar {
+  width: 100vw !important;
+  /* margin-left: calc(-50vw + 50%) !important; */
+  position: relative;
+}
 
-.logo:hover {
-  transform: scale(1.05);
-  transition: all 1s ease-in-out;
+.navbar .container-fluid {
+  max-width: 100% !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+@media (min-width: 992px) {
+  .navbar .container-fluid {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
 }
 
 .custom-nav .nav-link {

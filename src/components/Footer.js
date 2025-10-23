@@ -15,14 +15,16 @@ const Footer = () => {
     <footer className="footer-section">
       <Container>
         <Row className="flex-lg-nowrap gap-4">
-          <Col lg={3} md={6}>
-            <img
-              src={logo}
-              alt="Sky Education"
-              className="mb-3"
-              style={{ width: "100px", height: "80px" }}
-            />
+          <Col lg={3} md={6} className="text-center text-lg-start">
+            <div className="d-flex justify-content-center justify-content-lg-start mb-3">
+              <img
+                src={logo}
+                alt="Sky Education"
+                style={{ width: "100px", height: "80px" }}
+              />
+            </div>
             <p
+              className="text-center text-lg-start"
               style={{
                 fontSize: "12px",
                 color: "rgba(85, 85, 85, 1)",
@@ -34,7 +36,7 @@ const Footer = () => {
               and beauty to public services and education.
             </p>
             <p
-              className=" mb-1"
+              className="text-center text-lg-start mb-1"
               style={{
                 fontSize: "12px",
                 color: "rgba(85, 85, 85, 1)",
@@ -44,7 +46,7 @@ const Footer = () => {
               <strong className="text-dark">Phone: </strong>0161 526 5555
             </p>
             <p
-              className=" mb-1"
+              className="text-center text-lg-start mb-1"
               style={{
                 fontSize: "12px",
                 color: "rgba(85, 85, 85, 1)",
@@ -54,7 +56,7 @@ const Footer = () => {
               <strong className="text-dark">WhatsApp: </strong>07507 500507
             </p>
             <p
-              className=" mb-3"
+              className="text-center text-lg-start mb-3"
               style={{
                 fontSize: "12px",
                 color: "rgba(85, 85, 85, 1)",
@@ -69,7 +71,7 @@ const Footer = () => {
               </span>
             </p>
 
-            <div className="d-flex gap-2">
+            <div className="d-flex justify-content-center justify-content-lg-start gap-2">
               <a href="https://twitter.com" className="social-circle">
                 <img src={twitterIcon} alt="Twitter" />
               </a>
@@ -86,11 +88,11 @@ const Footer = () => {
           </Col>
 
           {/* Column 2 - Quick Links */}
-          <Col lg={3} md={6}>
-            <h5 className="fw-bold mb-3 playfair-display-custom">
+          <Col lg={3} md={6} className="text-center text-lg-start">
+            <h5 className="fw-bold mb-3 playfair-display-custom text-center text-lg-start">
               Quick Links
             </h5>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled d-flex flex-column align-items-center align-items-lg-start">
               <li>
                 <Link to="/about" className="footer-link">
                   About Us
@@ -115,9 +117,9 @@ const Footer = () => {
           </Col>
 
           {/* Column 3 - Help */}
-          <Col lg={3} md={6}>
-            <h5 className="fw-bold mb-3 playfair-display-custom">Help</h5>
-            <ul className="list-unstyled ">
+          <Col lg={3} md={6} className="text-center text-lg-start">
+            <h5 className="fw-bold mb-3 playfair-display-custom text-center text-lg-start">Help</h5>
+            <ul className="list-unstyled d-flex flex-column align-items-center align-items-lg-start">
               <li>
                 <a href="#support" className="footer-link">
                   Customer Support
@@ -142,24 +144,26 @@ const Footer = () => {
           </Col>
 
           {/* Column 4 - Newsletter */}
-          <Col lg={3} md={6}>
-            <h5 className="fw-bold mb-3 playfair-display-custom">
+          <Col lg={3} md={6} className="text-center text-lg-start">
+            <h5 className="fw-bold mb-3 playfair-display-custom text-center text-lg-start">
               Subscribe to Newsletter
             </h5>
-            <InputGroup className="mb-3 ">
-              <Form.Control
-                type="email"
-                placeholder="Enter email address"
-                className="rounded-end rounded-pill fw-lighter"
-                style={{ fontSize: "12px", color: "rgba(85, 85, 85, 1)" }}
-              />
-              <Button
-                className=" px-4 join-btn rounded-start rounded-pill shadow"
-                style={{ fontSize: "12px" }}
-              >
-                Join
-              </Button>
-            </InputGroup>
+            <div className="d-flex justify-content-center justify-content-lg-start mb-3">
+              <InputGroup className="w-auto">
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email address"
+                  className="rounded-end rounded-pill fw-lighter"
+                  style={{ fontSize: "12px", color: "rgba(85, 85, 85, 1)", minWidth: "200px" }}
+                />
+                <Button
+                  className="px-4 join-btn rounded-start rounded-pill shadow"
+                  style={{ fontSize: "12px" }}
+                >
+                  Join
+                </Button>
+              </InputGroup>
+            </div>
           </Col>
         </Row>
 

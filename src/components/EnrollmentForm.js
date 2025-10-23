@@ -156,17 +156,19 @@ const EnrollmentForm = ({ show, onHide, courseName }) => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formCourse">
-            <Form.Label>Course</Form.Label>
-            <Form.Control
-              as="textarea"
-              name="course"
-              value={formData.course}
-              onChange={handleChange}
-              rows={2}
-              disabled
-            />
-          </Form.Group>
+          {!courseName && (
+            <Form.Group className="mb-3" controlId="formCourse">
+              <Form.Label>Course</Form.Label>
+              <Form.Control
+                type="text"
+                name="course"
+                value={formData.course}
+                onChange={handleChange}
+                disabled
+                placeholder="Selected course will appear here"
+              />
+            </Form.Group>
+          )}
 
           <Form.Group className="mb-3" controlId="formMessage">
             <Form.Label>Message (Optional)</Form.Label>
