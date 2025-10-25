@@ -156,7 +156,7 @@ const TermsConditions = () => {
                       </p>
                       <div className="contact-info">
                         <p className="mb-1"><strong>Email:</strong> Info@skyeducationltd.com</p>
-                        <p className="mb-1"><strong>Phone:</strong> 0141 526 5555</p>
+                        <p className="mb-1"><strong>Phone:</strong> 0161 526 5555</p>
                         <p className="mb-1"><strong>Address:</strong> 281 Barlow Moor Road Chorlton Manchester M21 7GH</p>
                       </div>
                     </section>

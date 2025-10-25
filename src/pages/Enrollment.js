@@ -400,7 +400,7 @@ const EnrollmentPage = () => {
                     </div>
                     <p className="text-muted ms-4">
                       <a
-                        href="tel:+4401415265555"
+                        href="tel:+4401615265555"
                         className="text-decoration-none text-muted"
                       >
                         0161 526 5555
@@ -414,7 +414,7 @@ const EnrollmentPage = () => {
                     </div>
                     <p className="text-muted ms-4">
                       <a
-                        href="tel:+4401415265555"
+                        href="tel:+4401615265555"
                         className="text-decoration-none text-muted"
                       >
                         07507 500507

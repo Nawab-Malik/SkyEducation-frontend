@@ -212,16 +212,17 @@ function Hero() {
       };
     });
   };
-
+ 
   const categories = [
     { key: "ALL", name: "All Courses" },
     { key: "SEG", name: "Automotive & MOT" },
-    { key: "VTCT", name: "ESOL Certificates" },
-    { key: "PERSONS", name: "English & Math" },
-    { key: "PRO QUAL", name: "Construction" },
-    { key: "TAXI", name: "Taxi & Private Hire" },
-    { key: "ICQ", name: "Education & Training" },
+    { key: "AESTHETIC", name: "Beauty & Aesthetics", link: "https://skyaestheticstraining.co.uk/" },
     { key: "ChildCare", name: "Childcare & Residential Care" },
+    { key: "PRO QUAL", name: "Construction" },
+    { key: "ICQ", name: "Education & Training" },
+    { key: "PERSONS", name: "English & Math" },
+    { key: "VTCT", name: "ESOL Certificates" },
+    { key: "TAXI", name: "Taxi & Private Hire" },
   ];
 
   const getCoursesForCategory = () => {
@@ -232,6 +233,10 @@ function Hero() {
   };
 
   const handleCategorySelect = (category) => {
+    if (category.link) {
+      window.location.href = category.link;
+      return;
+    }
     setSelectedCategory(category.key);
     setCategorySearchTerm(category.name);
     setSelectedCourse("");
